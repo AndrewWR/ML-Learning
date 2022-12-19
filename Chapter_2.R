@@ -8,7 +8,7 @@ CO2 <- CO2 %>% as_tibble()
 
 ##  How many Types?
 CO2 %>% pull(Type) %>% unique()
-##  And Treatments?
+##  And Treatments??
 CO2 %>% pull(Treatment) %>% unique()
 ## And plants?
 CO2 %>% pull(Plant) %>% unique()
