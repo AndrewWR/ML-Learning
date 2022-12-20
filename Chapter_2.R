@@ -28,4 +28,16 @@ numeric_data <- list(a=rnorm(5, 10, 3), b=rnorm(9, 20, 5), c=rnorm(10, 2, 1))
 iwalk(numeric_data, ~hist(.x, main = .y))
 iwalk(numeric_data, ~paste0("Mean of ", .y, ": ", mean(.x) %>%  round(1)) %>% print())
 
+##  Define a dataframe of arguments to pass to rnorm
+arguments <- expand.grid(n = c(100, 200), mean = c(1, 10), sd = c(1, 10))
+##  Create data from rnorm with theses arguments
+plot_data <- pmap(arguments, rnorm)
+
+## Change shape of plot area
+par(mfrow = c(2,4))
+
+##  Plot the data
+iwalk(plot_data, ~hist(.x, main = paste("Element", .y), xlab = "Data values"))
+
+
 
