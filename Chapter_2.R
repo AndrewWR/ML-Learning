@@ -1,6 +1,6 @@
 library(tidyverse)
 library(lubridate)
-library(purrr)
+
 
 
 data("CO2")
